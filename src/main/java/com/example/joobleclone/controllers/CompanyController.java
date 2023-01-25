@@ -3,6 +3,8 @@ package com.example.joobleclone.controllers;
 import com.example.joobleclone.dtos.LoginDto;
 import com.example.joobleclone.models.Company;
 import com.example.joobleclone.services.CompanyService;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/companies")
+@ApiModel(value = "CompanyController", description = "Controller for testing registration of new company 'user'")
 public class CompanyController {
 
     private final CompanyService companyService;
@@ -21,6 +24,7 @@ public class CompanyController {
     }
 
     @PostMapping("/register")
+    @ApiOperation(value = "Register new company user", notes = "Returns company model")
     public ResponseEntity<Company> register(@RequestBody Company company){
         Company companyToRegister = companyService.register(company);
         return new ResponseEntity<>(companyToRegister, HttpStatus.CREATED);

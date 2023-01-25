@@ -1,6 +1,8 @@
 package com.example.joobleclone.models;
 
+import com.example.joobleclone.dtos.Views;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,16 +15,22 @@ public class JobPost implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonView(Views.Public.class)
     private Long id;
 
+    @JsonView(Views.Public.class)
     private String title;
 
+    @JsonView(Views.Public.class)
     private String description;
 
+    @JsonView(Views.Public.class)
     private String location;
 
+    @JsonView(Views.Public.class)
     private Double salary;
 
+    @JsonView(Views.Public.class)
     private Date createdAt;
 
     @ManyToOne
@@ -30,6 +38,7 @@ public class JobPost implements Serializable {
     @JsonIgnore
     private Company company;
 
+    @JsonView(Views.Internal.class)
     @OneToMany(mappedBy = "jobPost", cascade = CascadeType.ALL)
     private List<Application> applications;
 

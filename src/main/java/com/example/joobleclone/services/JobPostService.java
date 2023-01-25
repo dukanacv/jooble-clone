@@ -26,4 +26,8 @@ public class JobPostService {
     public List<JobPost> searchJobsByTitle(String title){
         return jobPostRepository.findByTitleContainingIgnoreCase(title);
     }
+
+    public void deleteJobPostById(Long id){
+        jobPostRepository.deleteById(id);
+    }
 }
