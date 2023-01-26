@@ -35,12 +35,11 @@ public class JobPostController {
     }
 
 
-    @JsonView(Views.Public.class)
     @GetMapping("/all")
     @ApiOperation(value = "Get all job posts", notes = "Returns paginated list of job posts")
-    public ResponseEntity<Page<JobPost>> getAllJobs(@RequestParam(defaultValue = "0") int page,
-                                                    @RequestParam(defaultValue = "10")int size){
-        Page<JobPost> allJobPosts = jobPostService.getAllJobPosts(page, size);
+    @JsonView(Views.Public.class)
+    public ResponseEntity<List<JobPost>> getAllJobs(){
+        List<JobPost> allJobPosts = jobPostService.getAllJobPosts();
         return new ResponseEntity<>(allJobPosts, HttpStatus.OK);
     }
 
@@ -64,6 +63,7 @@ public class JobPostController {
     @GetMapping("/search")
     @ApiOperation(value = "Search through job posts by provided keyword",
             notes = "Returns list of found job posts according to keyword")
+    @JsonView(Views.Public.class)
     public ResponseEntity<List<JobPost>> searchJobPostsByTitle(@RequestParam(required = false) String title){
         List<JobPost> searchedJobPosts = jobPostService.searchJobsByTitle(title);
         return new ResponseEntity<>(searchedJobPosts, HttpStatus.OK);

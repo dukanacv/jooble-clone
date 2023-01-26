@@ -57,6 +57,8 @@ public class JobPost implements Serializable {
         this.applications = applications;
     }
 
+
+
     public Long getId() {
         return id;
     }

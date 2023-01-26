@@ -18,9 +18,8 @@ public class JobPostService {
         this.jobPostRepository = jobPostRepository;
     }
 
-    public Page<JobPost> getAllJobPosts(int page, int size){
-        Pageable pageable = PageRequest.of(page, size);
-        return jobPostRepository.findAll(pageable);
+    public List<JobPost> getAllJobPosts(){
+        return jobPostRepository.findAll();
     }
 
     public List<JobPost> searchJobsByTitle(String title){
