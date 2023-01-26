@@ -3,7 +3,7 @@ info:
   description: Spring Rest API reference
   version: '1.0'
   title: Job portal API
-host: http://localhost:8080
+host:localhost:8080
 basePath: /
 tags:
   - name: app-user-controller
