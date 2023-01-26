@@ -1,21 +1,24 @@
 # Job portal application
 
-This is a simple, yet effective, job portal application built using Spring framework, where job seekers can search for 
-jobs and apply for them. On the other side, companies can post job oppenings and manage the applications they receive.
+This is a simple, yet effective, job portal application built using Spring boot version 2.7.8. It is a job posting and application platform for companies and job seekers.
+
+### Users
+The application has two types of users:
+- Companies 
+- Job seekers(referred to as "app users")
 
 ### Features
-- Users can register as either a job seekers(app users) or a company, gaining respective roles
+- Both companies and app users are able to register and login to the application
+- After logging in, they are able to access their respective dashboard where they can perform their respective actions
 - App users can search for job posts and apply for them
 - Companies can post job offers and manage(view, edit or delete) received users applications for certain job
-- Authentication and authorization is implemented to restrict access to certain endpoints and features
 
 ### Technology stack used in app
-- Spring boot
-- Spring Data JPA
-- Hibernate
-- MySQL relational database
-- Hibernate
-- Swagger
+- Spring boot - web framework used
+- Spring Data JPA - database management
+- MySQL - relational database
+- Maven - dependancy management
+- Swagger - API documentation
 
 ### Getting started
 1. Clone the repository: git clone https://github.com/dukanacv/jooble-clone.git
