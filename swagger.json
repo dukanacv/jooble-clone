@@ -25,6 +25,10 @@
       "description": "Job Post Controller"
     }
   ],
+  "schemes": [
+    "https",
+    "http"
+  ],
   "paths": {
     "/applications/all/{jobPostId}": {
       "get": {

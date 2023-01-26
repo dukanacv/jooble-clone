@@ -27,7 +27,7 @@ The application has two types of users:
 4. On your web browser, navigate to http://localhost:8080/users/register or http://localhost:8080/companies/register
 5. Register as app user or company to start using application
 
-### API endpoints to lookout for
+### API endpoints to lookout for(accessible on https://dukanacv.github.io/jooble-clone/)
 - /users/register (POST) - register a new user
 - /companies/regsiter (POST) - register new company
 - /users/login (POST) - login an existing user(company)
