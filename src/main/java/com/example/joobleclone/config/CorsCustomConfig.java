@@ -13,6 +13,7 @@ public class CorsCustomConfig implements WebMvcConfigurer{
     public void addCorsMappings(CorsRegistry registry) {
         registry
                 .addMapping("/**")
-                .allowedOrigins("https://dukanacv.github.io/jooble-clone/");
+                .allowedOrigins("*");
     }
+
 }
