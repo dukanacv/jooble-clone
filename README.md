@@ -16,6 +16,7 @@ The application has two types of users:
 ### Technology stack used in app
 - Spring boot - web framework used
 - Spring Data JPA - database management
+- Spring Security - used for implementing RBAC
 - MySQL - relational database
 - Maven - dependancy management
 - Swagger - API documentation
